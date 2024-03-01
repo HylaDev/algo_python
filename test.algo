@@ -1,0 +1,22 @@
+Fonction résoudre_labyrinthe(labyrinthe, départ, arrivée):
+    chemin = []
+    SI trouver_chemin(labyrinthe, départ, arrivée, chemin):
+        afficher "Chemin trouvé : ", chemin
+    SINON:
+        afficher "Pas de chemin trouvé."
+
+Fonction trouver_chemin(labyrinthe, position, arrivée, chemin):
+    x, y = position
+    SI position = arrivée:
+        ajouter position à chemin
+        retourner Vrai
+    SINON SI position est hors du labyrinthe ou obstacle:
+        retourner Faux
+    SINON:
+        marquer position comme visitée
+        pour chaque direction dans [haut, bas, gauche, droite]:
+            nouvelle_position = position + direction
+            si trouver_chemin(labyrinthe, nouvelle_position, arrivée, chemin):
+                ajouter position à chemin
+                retourner Vrai
+        retourner Faux

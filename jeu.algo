@@ -1,0 +1,6 @@
+Jeu: 
+user_x, user_y, sortie_x, sortie_y -> 0: entier
+dispo: booléen
+ 
+Debut
+

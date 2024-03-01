@@ -1,0 +1,88 @@
+// ajouter element, rechercher element, supprimer element dans tableau
+
+Manipuler_tableau:
+
+    VARIABLES
+        etudiants["Junior","Andil","Roxane"]: TABLEAU
+        nom: CHAINECARACTERES
+        i <- 0: ENTIER
+        mon_choix: CARACTERES
+
+    // ajouter au tableau
+    ajouter_element(nom,etudiants):
+        SI nom != "" Alors 
+            AJOUTER etudiants <- nom    // etudiants[].ajouter(nom) 
+        SINON 
+            ECRIRE "Entrez votre nom" <- nom
+        FINSI
+    FIN ajouter_element()
+
+    // afficher tableau
+    afficher_element(etudiants):
+        POUR i = 0; i < etudiants.longeur; i++:
+            AFFICHER etudiants[i]
+        FINPOUR
+    FIN afficher_element()
+
+
+
+
+    // rechercher element
+    rechercher_element(nom,etudiants):
+        POUR i = 0; i < etudiants.longeur; i++:
+            SI nom == etudiants[i] Alors
+                AFFICHER "Le nom existe"
+            SINON
+                AFFICHER "Le nom n existe pas"
+            FINSI
+        FINPOUR
+
+    FIN rechercher_element()
+
+    // supprimer element
+    suprimer_element(nom, etudiants):
+        POUR i = 0; i < etudiants.longeur; i++:
+            SI nom == etudiants[i] Alors
+                SUPPRIMER etudiants[i]
+            SINON
+                AFFICHER "Le nom n existe pas"
+            FINSI
+        FINPOUR
+    
+    FIN rechercher_element()
+
+    DEBUT
+        // afficher menu
+        AFFICHER "A. Ajouter element"
+        AFFICHER "B. Recherche element"
+        AFFICHER "C. Ajouter element"
+
+       ECRIRE "Entrez votre choix" <- mon_choix 
+
+
+        CHOIX sur mon_choix FAIRE
+            // choix A
+            "A":
+                ECRIRE "Entrez le nom à ajouter" <- nom
+                ajouter_element(nom, etudiants)
+
+            // choic B
+            "B":
+                ECRIRE "Entrez le nom à rechercher" <- nom
+                rechercher_element(nom, etudiants)
+
+            // choix C
+            "C":
+                ECRIRE "Entrez le nom à rechercher" <- nom
+                ajouter_element(nom, etudiants)
+
+            AUTRESCAS: 
+                AFFICHER "Bye bye"
+        FINCHOIX
+
+    FIN
+
+        
+
+
+

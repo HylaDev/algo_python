@@ -1,0 +1,52 @@
+// remplir un tableau, afficher valeur tableau, verifier si valeur existe dans tableau
+
+Manipuler_tableau:
+    VARIABLES
+    matieres[]: TABLEAU
+    nom_module: CHAINECARACTERES
+    i <- 0: ENTIER
+
+    // fonction pour ajouter module
+    ajouter_module(nom_module,matieres[]):
+        SI nom_module != "" Alors 
+            matieres[].ajouter(nom_module)
+        SINON 
+            ECRIRE "Entrez nom du module" <- nom_module
+        FINSI
+    FIN ajouter_module
+
+    // fonction pour afficher valeur tableau
+    afficher_modules(matieres[]):
+        POUR i = 0; i < matieres.longeur; i++:
+            AFFICHER matieres[i]
+        FINPOUR
+    FIN afficher_modules
+
+    // fonction pour vérifier si le module existe dans le tableau des modules
+    verifier_module(nom,matieres[]):
+        POUR i = 0; i < matieres.longeur; i++:
+            SI nom == matieres[i] Alors
+                AFFICHER "Le module existe"
+            SINON
+                AFFICHER "Le module n existe pas"
+            FINSI
+        FINPOUR
+
+    FIN verifier_module
+
+    DEBUT
+        // recuperer l entrée de l utilisateur
+        ECRIRE "Entrez nom du module" <- nom_module
+
+        ajouter_module(nom_module,matieres[])
+
+        afficher_modules(matieres[])
+
+        verifier_module(nom,matieres[]) 
+
+    FIN
+
+        
+
+
+

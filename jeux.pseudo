@@ -1,0 +1,12 @@
+JEUX: 
+    VARIABLE:
+    perso_x, perso_y: ENTIER
+    sortie_x <
+    sortie_y <- 0: entier
+    dispo <- true: BOOLEEN
+
+DEBUT
+
+
+FIN
+
