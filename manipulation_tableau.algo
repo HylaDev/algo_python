@@ -9,20 +9,20 @@ Manipuler_tableau:
         mon_choix: CARACTERES
 
     // ajouter au tableau
-    ajouter_element(nom,etudiants):
+    ajouter_nom(nom,etudiants):
         SI nom != "" Alors 
             AJOUTER etudiants <- nom    // etudiants[].ajouter(nom) 
         SINON 
             ECRIRE "Entrez votre nom" <- nom
         FINSI
-    FIN ajouter_element()
+    FIN ajouter_nom()
 
     // afficher tableau
-    afficher_element(etudiants):
+    afficher_tableau(etudiants):
         POUR i = 0; i < etudiants.longeur; i++:
             AFFICHER etudiants[i]
         FINPOUR
-    FIN afficher_element()
+    FIN afficher_tableau()
 
 
 
@@ -53,28 +53,32 @@ Manipuler_tableau:
 
     DEBUT
         // afficher menu
-        AFFICHER "A. Ajouter element"
-        AFFICHER "B. Recherche element"
-        AFFICHER "C. Ajouter element"
+        AFFICHER "1. Ajouter étudiant"
+        AFFICHER "2. Afficher liste étudiant"
+        AFFICHER "3. Recherche étudiant"
+        AFFICHER "3. Ajouter element"
 
        ECRIRE "Entrez votre choix" <- mon_choix 
 
 
         CHOIX sur mon_choix FAIRE
-            // choix A
-            "A":
+            // choix 1
+            "1":
                 ECRIRE "Entrez le nom à ajouter" <- nom
-                ajouter_element(nom, etudiants)
+                ajouter_nom(nom, etudiants)
 
-            // choic B
-            "B":
-                ECRIRE "Entrez le nom à rechercher" <- nom
-                rechercher_element(nom, etudiants)
+            "2":
+                afficher_tableau(nom, etudiants)
 
-            // choix C
-            "C":
+            // choic 2
+            "3":
+                ECRIRE "Entrez le nom à supprimer" <- nom
+                supprimer_nom(nom, etudiants)
+
+            // choix 3
+            "4":
                 ECRIRE "Entrez le nom à rechercher" <- nom
-                ajouter_element(nom, etudiants)
+                ajouter_nom(nom, etudiants)
 
             AUTRESCAS: 
                 AFFICHER "Bye bye"

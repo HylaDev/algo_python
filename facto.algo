@@ -1,0 +1,18 @@
+Factorielle:
+    variables
+        n : entier
+        a,b <- 0,1 : entier
+
+        factorielle(n)
+           
+            si n == 0 alors
+                afficher (a)
+            sinon si n == 1 alors
+                afficher (b)
+            sinon
+                afficher (n * factorielle(n-1))
+            fsi
+        fin factorielle()
+    début
+        factorielle(4)
+    fin

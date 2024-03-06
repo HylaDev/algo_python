@@ -1,0 +1,42 @@
+tri_de_tableau_par_selection:
+    variables: 
+        i,j <- 0: entier
+        tabl <- [5,1,3,2,8,9,4]: tableau entier
+
+    tri_decroissant()
+        pour i de 0 à longueur(tableau) faire
+            pour j de 0 à longueur(tableau) + i + 1 faire
+                si tableau[j] < tableau[j+1] alors
+                    échanger tableau[j] et tableau[j+1]
+                fin si
+            fin pour
+        fin pour
+    fin tri_decroissant()
+
+
+    début
+    
+    fin
+
+// Tri à bulle
+tri_de_tableau_à_bulle:
+    variables:
+        tabl : tableau
+        i,j : entier
+        n <- longueur(tabl)
+
+
+    tri_bulle(tabl)
+        pour i de 0 à n-1 faire
+            pour j de 0 à n-i-1 faire
+                si tabl[j] > tabl[j-1] alors
+                    échanger tabl[j] et tabl[j-1]
+                fin si
+            fin pour
+        fin pour
+    Fin tri_bulle(tabl)
+
+
+tri_à_bulles:
+début 
+ REPETER
